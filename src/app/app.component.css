@@ -1,0 +1,16 @@
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #491a75;
+}
+.mat-toolbar > .container > .mat-icon {
+  color: #fff;
+}
+.page-content {
+  margin-top: 64px;
+}
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
