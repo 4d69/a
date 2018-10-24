@@ -11,10 +11,10 @@ export class ShoppingCartService {
         console.log('init: ShoppingCartService');
 
         this.shoppingCart.Items = [
-            { Id: 1, Name: 'Pink Blossom', ImagePath: '1.png', Quantity: 1, Price: 3.99 },
-            { Id: 2, Name: 'Lemonade', ImagePath: '2.png', Quantity: 3, Price: 2.99 },
-            { Id: 3, Name: 'Lemon Lime', ImagePath: '3.png', Quantity: 1, Price: 4.99 },
-            { Id: 4, Name: 'Sherbert', ImagePath: '4.png', Quantity: 2, Price: 2.99 }
+            { Id: 1, Name: 'Pink Blossom', ImagePath: '1.jpg', Quantity: 1, Price: 3.99 },
+            { Id: 2, Name: 'Lemonade', ImagePath: '2.jpg', Quantity: 3, Price: 2.99 },
+            { Id: 3, Name: 'Lemon Lime', ImagePath: '3.jpg', Quantity: 1, Price: 4.99 },
+            { Id: 4, Name: 'Sherbert', ImagePath: '4.jpg', Quantity: 2, Price: 2.99 }
         ];
     }
 

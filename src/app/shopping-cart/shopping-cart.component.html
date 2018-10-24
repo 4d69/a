@@ -1,4 +1,15 @@
-<mat-card>
+<div class="header">
+    <div>
+        <mat-icon style="vertical-align: sub; font-size: 26px; margin-right: 10px;">shopping_cart</mat-icon>Shopping Cart
+    </div>
+    <div style="margin-top: -3px;">
+        <button mat-icon-button (click)="dialogRef.close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+
+<mat-card style="margin: -24px;">
     <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="Image">
             <th width="12%" mat-header-cell *matHeaderCellDef></th>

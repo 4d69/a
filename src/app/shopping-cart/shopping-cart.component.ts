@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './models/item';
 import { ShoppingCartService } from './services/shopping-cart.service';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
     selector: 'shopping-cart',
@@ -8,7 +9,7 @@ import { ShoppingCartService } from './services/shopping-cart.service';
     styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-    constructor(private cartService: ShoppingCartService) { }
+    constructor(private cartService: ShoppingCartService, private dialogRef: MatDialogRef<ShoppingCartComponent>) { }
 
     displayedColumns: string[] = ['Image', 'Name', 'Price', 'Quantity', 'Total', 'Remove'];
 
