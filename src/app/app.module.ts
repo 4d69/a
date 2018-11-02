@@ -6,6 +6,7 @@ import {
     MatBadgeModule,
     MatButtonModule,
     MatCardModule,
+    MatChipsModule,
     MatDialogModule,
     MatIconModule,
     MatInputModule,
@@ -21,10 +22,11 @@ import { HomeComponent } from './home-component/home-component.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
 import { ProductCatalogComponent } from './product-catalog/product-catalog.component';
+import { ProductCatalogService } from './product-catalog/product-catalog.service';
 import { ProductNavigationComponent } from './product-navigation/product-navigation.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { ShoppingCartService } from './shopping-cart/services/shopping-cart.service';
+import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
         MatBadgeModule,
         MatButtonModule,
         MatCardModule,
+        MatChipsModule,
         MatDialogModule,
         MatIconModule,
         MatInputModule,
@@ -66,6 +69,7 @@ const appRoutes: Routes = [
         ShoppingCartComponent
     ],
     providers: [
+        ProductCatalogService,
         ShoppingCartService
     ],
     entryComponents: [

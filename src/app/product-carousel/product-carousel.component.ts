@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate} from '@angular/animations';
 import { MatDialog } from '@angular/material';
-import { Item } from '../shopping-cart/models/item';
+import { Item } from '../product-catalog/item';
 import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({

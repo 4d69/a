@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { ShoppingCartService } from './shopping-cart/services/shopping-cart.service';
+import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 
 @Component({
     selector: 'app-root',

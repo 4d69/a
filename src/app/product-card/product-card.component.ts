@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Item } from '../shopping-cart/models/item';
+import { Item } from '../product-catalog/item';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { ShoppingCartService } from '../shopping-cart/services/shopping-cart.service';
+import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 
 @Component({
     selector: 'product-card',

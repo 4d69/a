@@ -1,26 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
-
-import { Item } from '../shopping-cart/models/item';
-import { ProductCardComponent } from '../product-card/product-card.component';
 import { ActivatedRoute } from '@angular/router';
 
-declare var window;
+import { Item } from './item';
+import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductCatalogService } from './product-catalog.service';
 
-// Category property on Item class can also be an array for multiple filter types like candle and holiday at the same time
-const TEST_ITEMS: Item[] = [
-    { Id: 10, Category: 1, Name: 'Vanilla Cotton', Price: 8.99, ImagePath: 'VanillaCotton.jpg', Quantity: 1 },
-    { Id: 11, Category: 1, Name: 'Lemon Drop', Price: 8.99, ImagePath: 'LemonDrop.jpg', Quantity: 1 },
-    { Id: 12, Category: 1, Name: 'Jack Frost', Price: 8.99, ImagePath: 'JackFrost.jpg', Quantity: 1 },
-    { Id: 13, Category: 1, Name: 'Macadamia Nut Coffee', Price: 8.99, ImagePath: 'VanillaMacadamiaNutCoffee.jpg', Quantity: 1 },
-    { Id: 14, Category: 1, Name: 'Creme Brulee', Price: 8.99, ImagePath: 'CremeBrulee.jpg', Quantity: 1 },
-    { Id: 15, Category: 1, Name: 'Cranberry Kettle Corn', Price: 8.99, ImagePath: 'CranberryKettleCorn.jpg', Quantity: 1 },
-    { Id: 16, Category: 1, Name: 'Butt Naked', Price: 8.99, ImagePath: 'ButtNaked.jpg', Quantity: 1 },
-    { Id: 17, Category: 1, Name: 'Sweet Pea', Price: 8.99, ImagePath: 'SweetPea.jpg', Quantity: 1 },
-    { Id: 18, Category: 1, Name: 'Mango Papaya', Price: 8.99, ImagePath: 'MangoPapaya.jpg', Quantity: 1 },
-    { Id: 19, Category: 1, Name: 'Blueberry Cobbler', Price: 8.99, ImagePath: 'BlueberryCobbler.jpg', Quantity: 1 },
-    { Id: 19, Category: 4, Name: 'Candle Pack', Price: 19.99, ImagePath: 'Candle5.jpg', Quantity: 1 }
-];
+declare var window;
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,7 +15,11 @@ const TEST_ITEMS: Item[] = [
     styleUrls: ['./product-catalog.component.css']
 })
 export class ProductCatalogComponent implements OnInit {
-    constructor(private dialog: MatDialog, private route: ActivatedRoute) {}
+    constructor(
+        private dialog: MatDialog,
+        private productCatalog: ProductCatalogService,
+        private route: ActivatedRoute
+    ) {}
 
     dataSource: MatTableDataSource<Item> = new MatTableDataSource<Item>([]);
 
@@ -41,6 +31,8 @@ export class ProductCatalogComponent implements OnInit {
 
     ngOnInit(): void {
         window.scrollTo(0, 0);
+
+        this.dataSource.data = this.productCatalog.items.slice();
 
         this.dataSource.paginator = this.paginator;
 
@@ -56,23 +48,38 @@ export class ProductCatalogComponent implements OnInit {
                 this.filter = Number(param);
             }
          });
-
-        this.getProducts();
     }
 
-    getProducts(): void {
-        // Fetch from API
-        // this.dataSource.data = response;
-        this.dataSource.data = TEST_ITEMS;
-    }
-
-    filterChanged(filterType: number): void {
-        this.dataSource.filter = filterType.toString();
+    filterChanged(category: string): void {
+        this.dataSource.filter = category;
         this.dataSource.paginator.firstPage();
     }
 
-    sortChanged(sortType: number): void {
-        // do some shit here
+    sortChanged(sortType: string): void {
+        switch (sortType) {
+            case '1':
+                this.dataSource.data = this.productCatalog.items.slice();
+                break;
+            case '2':
+                this.dataSource.data.sort((a, b) => {
+                    return a.Name.localeCompare(b.Name);
+                });
+                this.refreshDataSource();
+                break;
+            case '3':
+                this.dataSource.data.sort((b, a) => {
+                    return a.Name.localeCompare(b.Name);
+                });
+                this.refreshDataSource();
+                break;
+            default:
+                return;
+        }
+    }
+
+    refreshDataSource(): void {
+        this.dataSource.data = this.dataSource.data.slice();
+        this.paginator.firstPage();
     }
 
     openProductCard(item: Item): void {

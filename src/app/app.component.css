@@ -6,24 +6,6 @@
 
 
 
-
-.page-container {
-  width: 980px;
-  height: 100%;
-  margin: 0 auto;
-}
-.flex-box {
-  display: flex;
-  justify-content: space-between;
-}
-.mat-icon {
-  margin: 0 10px;
-  color: #fff;
-  vertical-align: middle;
-}
-button {
-  color: #fff;
-}
 /* header */
 header {
   height: 64px;
@@ -36,31 +18,48 @@ header {
               0 1px 10px   0 rgba(0, 0, 0, .12);
   z-index: 100;
 }
-.brand {
+.header-brand {
   margin: auto 0;
   color: white;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
   font-size: 24px;
-}
-.brand > button {
-  font-size: 30px;
-}
-.brand > span {
   cursor: pointer;
 }
-.brand > span:active, .brand > span:focus {
+.header-brand:active,
+.header-brand:focus {
   outline: 0;
 }
+.header-buttons button {
+  color: #fff;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
+}
+.header-buttons button .mat-icon {
+  margin: 0 10px;
+}
+.header-buttons button:hover {
+  color: mediumorchid;
+}
+.header-buttons button:hover .mat-icon {
+  color: mediumorchid;
+}
+
+
+
 /* page-content */
 .page-content {
   width: 100%;
   flex: 1;
 }
+
+
+
 /* footer */
 footer {
   bottom: 0;
   left: 0;
   right: 0;
   background-color: #333;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
   color: #fff;
   font-size: 9px;
 }
@@ -68,7 +67,7 @@ footer a {
   color: #fff;
 }
 footer a:hover {
-  color: #ff47c4;
+  color: mediumorchid;
 }
 .footer-bg {
   width: 100%;
@@ -86,6 +85,11 @@ footer a:hover {
   font-size: 14px;
 }
 .social-media {
+  padding: 10px 40px;
+  font-size: 14px;
+}
+.social-media i {
+  margin: 5px 8px 0 0;
   font-size: 30px;
 }
 .contact-us {
@@ -93,19 +97,22 @@ footer a:hover {
   font-size: 14px;
 }
 .contact-us > div {
+  display: flex;
   margin: 5px 0;
 }
-.contact-us > div:first-child {
-  margin: 0 0 10px 12px;
-  padding: 5px 0;
-  border-bottom: 1px solid #fff;
+.contact-us > div > a {
+  margin: 3px;
+  text-decoration: underline;
+}
+.contact-us > div > span {
+  padding: 3px 0 3px 3px;
 }
 .copyright-container {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 0;
   font-size: 12px;
 }
-.copyright-container a:first-child {
-  margin-right: 15px;
+.copyright-container a {
+  margin-left: 15px;
 }

@@ -1,46 +1,58 @@
 <div class="page-content">
-    <div class="product-header">
-        <div class="product-header-title">
-            Product Catalog
-        </div>
-        <div class="filter-sort-group">
-            <div class="filter-sort-container">
-                <label>Filter By:</label>
-                <select [ngModel]="filter" (change)="filterChanged($event.target.value)">
-                    <option value="0">All Items</option>
-                    <option value="1">Soy Candles</option>
-                    <option value="2">Natural Soap</option>
-                    <option value="3">Bath Accessories</option>
-                    <option value="4">Gift Sets</option>
-                </select>
+    <div>
+        <div class="product-header">
+            <div class="product-header-title">
+                Product Catalog
             </div>
-            <div class="filter-sort-container">
-                <label>Sort By:</label>
-                <select (change)="sortChanged($event.target.value)">
-                    <option value="1">Most Popular</option>
-                    <option value="2">Alphabetical (A-Z)</option>
-                    <option value="3">Alphabetical (Z-A)</option>
-                </select>
+            <div class="filter-sort-group">
+                <div class="filter-sort-container">
+                    <div>
+                        <label>Filter By:</label>
+                    </div>
+                    <div>
+                        <select [ngModel]="filter" (change)="filterChanged($event.target.value)">
+                            <option value="0">All Items</option>
+                            <option value="1">Soy Candles</option>
+                            <option value="2">Natural Soap</option>
+                            <option value="3">Bath Accessories</option>
+                            <option value="4">Gift Sets</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-sort-container">
+                    <div>
+                        <label>Sort By:</label>
+                    </div>
+                    <div>
+                        <select (change)="sortChanged($event.target.value)">
+                            <option value="1">Most Popular</option>
+                            <option value="2">Alphabetical (A-Z)</option>
+                            <option value="3">Alphabetical (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-card" *ngFor="let item of dataSource.connect() | async" (click)="openProductCard(item)">
+                <div class="product-image">
+                        <div class="product-price">
+                                {{ item.Price | currency }}
+                            </div>
+                    <img src="../../assets/{{ item.ImagePath }}">
+                </div>
+                <div class="product-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+                <div class="product-name">
+                    {{ item.Name }}
+                </div>
+                <div class="product-type">
+                    {{ productCatalog.getProductType(item) }}
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="product-container">
-        <div class="product-card" *ngFor="let item of dataSource.connect() | async" (click)="openProductCard(item)">
-            <div class="product-image">
-
-            </div>
-            <div class="product-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-            <div class="product-name">
-                {{ item.Name }}
-            </div>
-            <div class="product-price">
-                {{ item.Price | currency }}
-            </div>
-        </div>
-    </div>
-
-    <mat-paginator [pageSize]="12" [pageSizeOptions]="[12, 25, 50, 100]"></mat-paginator>
+    <mat-paginator [pageSize]="8" [pageSizeOptions]="[8, 16, 32, 64]"></mat-paginator>
 </div>

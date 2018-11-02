@@ -1,10 +1,16 @@
 .page-content {
-  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   width: 100%;
   /* max-width: 980px; */
   max-width: 990px; /* compensate for margins */
   margin: 0 auto;
 }
+
+
+
 /* .product-header */
 .product-header {
   display: flex;
@@ -14,20 +20,21 @@
 }
 .product-header-title {
   color: rebeccapurple;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: bold;
 }
-.filter-sort-group {
+.product-header .filter-sort-group {
   display: flex;
 }
-.filter-sort-container {
+.product-header .filter-sort-container {
   display: grid;
   margin-left: 30px;
   color: #333;
   font-size: 14px;
   text-transform: uppercase;
 }
-select {
+.product-header select {
   -webkit-appearance: none;
   padding-top: 4px;
   padding-right: 25px;
@@ -43,25 +50,33 @@ select {
   text-transform: uppercase;
   cursor: pointer;
 }
-select:active, select:focus {
+.product-header select:active,
+.product-header select:focus {
   outline: 0;
 }
-select > option {
+.product-header select > option {
   color: #333;
   cursor: pointer;
 }
+
+
+
 /* .product-container */
 .product-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: flex-start;
+  min-height: 540px;
   margin-bottom: 15px;
 }
 .product-container::after {
   content: "";
   flex: auto;
 }
+
+
+
 /* .product-card */
 .product-card {
   display: flex;
@@ -78,22 +93,37 @@ select > option {
 .product-card:hover {
   border-color: rebeccapurple;
 }
-.product-card:hover > .product-image {
+.product-card:hover .product-price {
+  color: rebeccapurple;
+}
+/* .product-card:hover > .product-image {
   display: none;
 }
 .product-card:hover > .product-description {
   display: flex;
-}
+} */
 .product-image {
   height: 100%;
   background-color: #fafafa;
+  overflow: hidden;
+}
+.product-image > img {
+  height: 100%;
+  width: 100%;
 }
 .product-name {
-  padding: 10px 0 2px;
+  padding-top: 5px;
   border-top: 1px solid #ddd;
   color: rebeccapurple;
-  font-family: Karla, Open Sans, Arial, Helvetica, sans-serif;
+  font-family: Karla, Arial, Helvetica, sans-serif;
   font-size: 18px;
+  text-align: center;
+}
+.product-type {
+  padding-bottom: 5px;
+  color: dimgray;
+  font-family: Karla, Arial, Helvetica, sans-serif;
+  font-size: 14px;
   text-align: center;
 }
 .product-description {
@@ -115,11 +145,14 @@ select > option {
   }
 }
 .product-price {
-  padding-bottom: 10px;
+  position: absolute;
+  margin: 6px;
   color: #333;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
   font-size: 14px;
-  text-align: center;
 }
+
+
 
 .mat-paginator {
   margin: 25px 0 30px;
@@ -128,3 +161,20 @@ select > option {
 }
 
 
+
+@media screen and (max-width: 500px) {
+  .product-header {
+    flex-direction: column;
+    padding-top: 5px;
+  }
+  .product-header-title {
+    margin: 8px;
+  }
+  .filter-sort-container {
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+  .filter-sort-group {
+    justify-content: space-between;
+  }
+}

@@ -8,17 +8,10 @@
 
 <header>
     <div class="page-container flex-box">
-        <div class="brand">
-            <!-- <button mat-icon-button (click)="menu = !menu; searching = false;">
-                <mat-icon>menu</mat-icon>
-            </button> -->
-            <!-- Candle Company --><span routerLink="/home">Company Brand</span>
+        <div class="header-brand" routerLink="/home">
+            Company Brand
         </div>
-        <div style="margin: auto 0;">
-            <!-- <button mat-button>
-                <mat-icon>account_circle</mat-icon>
-                <span>Sign In</span>
-            </button> -->
+        <div class="header-buttons" style="margin: auto 0;">
             <button mat-button routerLink="/product-catalog">
                 <mat-icon>store</mat-icon>
                 <span>Catalog</span>
@@ -28,8 +21,8 @@
                 <span>Search</span>
             </button>
             <button mat-button (click)="openShoppingCart()">
-                <mat-icon *ngIf="!cartService.shoppingCart.Items.length">shopping_cart</mat-icon>
-                <mat-icon *ngIf="cartService.shoppingCart.Items.length" matBadge="{{ cartService.shoppingCart.Items.length }}" matBadgeColor="warn">shopping_cart</mat-icon>
+                <mat-icon *ngIf="!cartService.items.length">shopping_cart</mat-icon>
+                <mat-icon *ngIf="cartService.items.length" matBadge="{{ cartService.items.length }}" matBadgeColor="warn">shopping_cart</mat-icon>
                 <span>Shopping Cart</span>
             </button>
         </div>
@@ -54,16 +47,28 @@
                 <a href="#">Gift Sets</a>
             </div>
             <div class="social-media">
-                <!-- social media icons -->
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-pinterest"></i>
+                <div>
+                    Follow Us On Social Media
+                </div>
+                <div>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div>
             </div>
             <div class="contact-us">
-                <div>Contact Us</div>
-                <div><mat-icon>assignment</mat-icon> <a style="margin-left: 1px; text-decoration: underline;">Online Submission</a></div>
-                <div><mat-icon>email</mat-icon> CustomerService@Company.com</div>
-                <div><mat-icon>phone_android</mat-icon> +1 650-555-7492</div>
+                <div>
+                    Contact Us
+                </div>
+                <div>
+                    <mat-icon>assignment</mat-icon><a href="#">Online Submission</a>
+                </div>
+                <div>
+                    <mat-icon>email</mat-icon><span>CustomerService@Company.com</span>
+                </div>
+                <div>
+                    <mat-icon>phone_android</mat-icon><span>+1 650-555-7492</span>
+                </div>
             </div>
         </div>
     </div>

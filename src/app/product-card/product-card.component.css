@@ -24,6 +24,7 @@
   font-weight: bold;
 }
 .price {
+  margin-bottom: 15px;
   color: dimgray;
   font-size: 14px;
 }
