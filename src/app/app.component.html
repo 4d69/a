@@ -1,60 +1,75 @@
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
 <header>
-    <div class="container flex-box">
+    <div class="page-container flex-box">
         <div class="brand">
-            <button mat-icon-button style="font-size: 30px;">
+            <!-- <button mat-icon-button (click)="menu = !menu; searching = false;">
                 <mat-icon>menu</mat-icon>
-            </button>
-            Candle Company
+            </button> -->
+            <!-- Candle Company --><span routerLink="/home">Company Brand</span>
         </div>
         <div style="margin: auto 0;">
-            <button mat-button (click)="isSearching=!isSearching">
+            <!-- <button mat-button>
+                <mat-icon>account_circle</mat-icon>
+                <span>Sign In</span>
+            </button> -->
+            <button mat-button routerLink="/product-catalog">
+                <mat-icon>store</mat-icon>
+                <span>Catalog</span>
+            </button>
+            <button mat-button (click)="searching = !searching; menu = false;">
                 <mat-icon>search</mat-icon>
                 <span>Search</span>
             </button>
-            <button mat-button>
-                <mat-icon>account_circle</mat-icon>
-                <span>Sign In</span>
-            </button>
-            <button mat-button (click)="openDialog()">
-                <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
-                <span>Cart</span>
+            <button mat-button (click)="openShoppingCart()">
+                <mat-icon *ngIf="!cartService.shoppingCart.Items.length">shopping_cart</mat-icon>
+                <mat-icon *ngIf="cartService.shoppingCart.Items.length" matBadge="{{ cartService.shoppingCart.Items.length }}" matBadgeColor="warn">shopping_cart</mat-icon>
+                <span>Shopping Cart</span>
             </button>
         </div>
     </div>
 </header>
 
-<div class="search" [ngClass]="{ 'show-search': isSearching}">
-    <div class="container">
-        <input>
-    </div>
-</div>
+<product-navigation [toggled]="menu"></product-navigation>
+
+<product-search [toggled]="searching"></product-search>
 
 <div class="page-content">
-    <home-carousel></home-carousel>
-
-    <div class="container">
-        <product-carousel></product-carousel>
-        <product-carousel></product-carousel>
-    </div>
+    <router-outlet></router-outlet>
 </div>
 
-
-
 <footer>
-    <div class="site-nav">
-        <div class="container" style="margin-top: 5px;">
-            <a href="#">Product Section 1</a>
-            <a href="#">Product Section 2</a>
-            <a href="#">Product Section 3</a>
-            <a href="#">Product Section 4</a>
-            <a href="#">Product Section 5</a>
+    <div class="footer-bg">
+        <div class="page-container site-nav">
+            <div class="site-map">
+                <a href="#">Soy Candles</a>
+                <a href="#">Natural Soap</a>
+                <a href="#">Bath Accessories</a>
+                <a href="#">Gift Sets</a>
+            </div>
+            <div class="social-media">
+                <!-- social media icons -->
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-pinterest"></i>
+            </div>
+            <div class="contact-us">
+                <div>Contact Us</div>
+                <div><mat-icon>assignment</mat-icon> <a style="margin-left: 1px; text-decoration: underline;">Online Submission</a></div>
+                <div><mat-icon>email</mat-icon> CustomerService@Company.com</div>
+                <div><mat-icon>phone_android</mat-icon> +1 650-555-7492</div>
+            </div>
         </div>
     </div>
-    <div class="container flex-box" style="height: 30px;">
-        <span>&copy;2018 Candle Company</span>
+
+    <div class="page-container copyright-container">
+        <span>&copy; 2018 Candle Company</span>
         <span>
             <a href="#">Terms of Use</a>
             <a href="#">Privacy Policy</a>

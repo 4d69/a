@@ -1,18 +1,64 @@
-:host {
+.header {
+  margin: -24px;
+  padding: 10px;
+  text-align: right;
+}
+.container {
+  display: grid;
+  margin-top: 24px;
+} 
+.img-container {
   width: 100%;
-  margin: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
 }
-
-div {
-  height: 200px;
+.img-container > img {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: -15px;
+  padding: 5px 0;
+}
+.name {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.price {
+  color: dimgray;
+  font-size: 14px;
+}
+.description {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: justify;
+}
+.quantity {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.quantity > input {
+  height: 32px;
+  width: 25%;
+  margin: 0 5px;
   border: 1px solid #ddd;
-  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
 }
-div:hover {
-  border-color: #a774bc;
+.quantity > .undo {
+  float: right;
 }
-img {
-  margin-top: 40px;
-  max-width:100%;
-  max-height:100%;
+.actions {
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+  font-size: 18px;
+}
+.actions > span {
+  vertical-align: -webkit-baseline-middle;
+}
+.actions > button {
+  float: right;
+  width: 150px;
+  text-transform: uppercase;
 }

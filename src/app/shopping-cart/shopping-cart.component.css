@@ -8,6 +8,11 @@
   color: #fff;
   font-size: 24px;
 }
+.content {
+  height: 500px;
+  margin: -24px;
+  overflow: auto;
+}
 .mat-card {
   padding: 0;
   border-top: 1px solid #eee;

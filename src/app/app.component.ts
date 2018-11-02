@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ShoppingCartService } from './shopping-cart/services/shopping-cart.service';
 
 @Component({
     selector: 'app-root',
@@ -8,20 +9,21 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    constructor(private dialog: MatDialog) {}
+    constructor(
+        private cartService: ShoppingCartService, /* used in html */
+        private dialog: MatDialog
+    ) {}
 
-    title = 'app';
+    menu: boolean = false;
 
-    isSearching: boolean = false;
+    searching: boolean = false;
 
-    openDialog(): void {
-        const dialogRef = this.dialog.open(ShoppingCartComponent, {
-            width: '980px',
-            height: '700px'
-        });
+    openShoppingCart(): void {
+        this.menu = false;
+        this.searching = false;
 
-        dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
+        this.dialog.open(ShoppingCartComponent, {
+            width: '980px'
         });
     }
 }

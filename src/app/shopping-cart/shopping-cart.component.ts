@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Item } from './models/item';
 import { ShoppingCartService } from './services/shopping-cart.service';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MatTableDataSource } from '@angular/material';
 
 @Component({
     selector: 'shopping-cart',
@@ -9,11 +9,11 @@ import { MatDialogRef } from '@angular/material';
     styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-    constructor(private cartService: ShoppingCartService, private dialogRef: MatDialogRef<ShoppingCartComponent>) { }
+    constructor(private changeDetectorRefs: ChangeDetectorRef, private cartService: ShoppingCartService, private dialogRef: MatDialogRef<ShoppingCartComponent>) { }
 
     displayedColumns: string[] = ['Image', 'Name', 'Price', 'Quantity', 'Total', 'Remove'];
 
-    dataSource = this.cartService.shoppingCart.Items;
+    dataSource = new MatTableDataSource(this.cartService.shoppingCart.Items);
 
     ngOnInit() {
     }
@@ -31,5 +31,7 @@ export class ShoppingCartComponent implements OnInit {
 
     remove(item: Item) {
         this.cartService.removeItem(item);
+        this.dataSource = new MatTableDataSource(this.cartService.shoppingCart.Items);
+        this.changeDetectorRefs.detectChanges();
     }
 }

@@ -10,12 +10,12 @@ export class ShoppingCartService {
     constructor() {
         console.log('init: ShoppingCartService');
 
-        this.shoppingCart.Items = [
-            { Id: 1, Name: 'Pink Blossom', ImagePath: '1.jpg', Quantity: 1, Price: 3.99 },
-            { Id: 2, Name: 'Lemonade', ImagePath: '2.jpg', Quantity: 3, Price: 2.99 },
-            { Id: 3, Name: 'Lemon Lime', ImagePath: '3.jpg', Quantity: 1, Price: 4.99 },
-            { Id: 4, Name: 'Sherbert', ImagePath: '4.jpg', Quantity: 2, Price: 2.99 }
-        ];
+        // this.shoppingCart.Items = [
+        //     { Id: 1, Name: 'Pink Blossom', ImagePath: '1.jpg', Quantity: 1, Price: 3.99 },
+        //     { Id: 2, Name: 'Lemonade', ImagePath: '2.jpg', Quantity: 3, Price: 2.99 },
+        //     { Id: 3, Name: 'Lemon Lime', ImagePath: '3.jpg', Quantity: 1, Price: 4.99 },
+        //     { Id: 4, Name: 'Sherbert', ImagePath: '4.jpg', Quantity: 2, Price: 2.99 }
+        // ];
     }
 
     shoppingCart: ShoppingCart = new ShoppingCart();
@@ -26,8 +26,8 @@ export class ShoppingCartService {
         });
     }
 
-    addItem(): void {
-
+    addItem(item: Item): void {
+        this.shoppingCart.Items.push(item);
     }
 
     removeItem(item: Item): void {

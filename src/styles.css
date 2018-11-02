@@ -1,12 +1,28 @@
 html, body {
+  height: 100%;
   margin: 0;
-  font-family: Open Sans, Arial, Helvetica, sans-serif;
+  font-family: Quicksand, Open Sans, Arial, Helvetica, sans-serif;
 }
 a {
   cursor: pointer;
   text-decoration: none;
 }
 
+/* Anguar Material Overrides */
+.mat-button {
+  font-family: Quicksand, Open Sans, Arial, Helvetica, sans-serif;
+}
 .mat-button-wrapper {
   padding: 0 !important;
+}
+.mat-select-value-text,
+.mat-paginator-navigation-previous,
+.mat-paginator-navigation-next {
+  color: rebeccapurple !important;
+}
+.mat-paginator-navigation-previous[disabled] {
+  color: rgba(102, 51, 153, 0.26) !important;
+}
+.mat-paginator-navigation-next[disabled] {
+  color: rgba(102, 51, 153, 0.26) !important;
 }
