@@ -1,0 +1,130 @@
+.page-content {
+  /* height: 100%; */
+  width: 100%;
+  /* max-width: 980px; */
+  max-width: 990px; /* compensate for margins */
+  margin: 0 auto;
+}
+/* .product-header */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px 30px;
+  padding-top: 30px;
+}
+.product-header-title {
+  color: rebeccapurple;
+  font-size: 30px;
+  font-weight: bold;
+}
+.filter-sort-group {
+  display: flex;
+}
+.filter-sort-container {
+  display: grid;
+  margin-left: 30px;
+  color: #333;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+select {
+  -webkit-appearance: none;
+  padding-top: 4px;
+  padding-right: 25px;
+  border: 0;
+  background: transparent;
+  background-image: url('../../assets/select-ico.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  color: rebeccapurple;
+  font-family: Karla, Quicksand, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+select:active, select:focus {
+  outline: 0;
+}
+select > option {
+  color: #333;
+  cursor: pointer;
+}
+/* .product-container */
+.product-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin-bottom: 15px;
+}
+.product-container::after {
+  content: "";
+  flex: auto;
+}
+/* .product-card */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* grow and shrink card in parent flex */
+  height: 250px;
+  width: 235px;
+  max-width: 235px;
+  margin: 10px 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.product-card:hover {
+  border-color: rebeccapurple;
+}
+.product-card:hover > .product-image {
+  display: none;
+}
+.product-card:hover > .product-description {
+  display: flex;
+}
+.product-image {
+  height: 100%;
+  background-color: #fafafa;
+}
+.product-name {
+  padding: 10px 0 2px;
+  border-top: 1px solid #ddd;
+  color: rebeccapurple;
+  font-family: Karla, Open Sans, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+.product-description {
+  display: none;
+  align-items: center;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+  animation: halfOpacity 0.4s
+}
+@keyframes halfOpacity {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 0.5
+  }
+}
+.product-price {
+  padding-bottom: 10px;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+}
+
+.mat-paginator {
+  margin: 25px 0 30px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+

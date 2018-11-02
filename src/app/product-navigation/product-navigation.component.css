@@ -1,0 +1,30 @@
+.menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: -202px auto 0 auto;
+  transition: margin-top 0.4s ease;
+}
+.menu.toggled {
+  margin-top: 0;
+}
+.menu > div {
+  height: 265px;
+  width: 980px;
+  margin: 0 auto;
+  background-color: dimgray;
+  border: 1px solid dimgray;
+}
+.menu ul {
+  padding: 0;
+  list-style-type: none;
+}
+.menu li {
+  padding: 8px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+.menu li:hover {
+  background-color: #fafafa;
+}

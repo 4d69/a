@@ -1,0 +1,40 @@
+<div class="menu" [ngClass]="{'toggled': toggled}">
+    <div style="display: flex;">
+        <div class="" style="width: 350px; margin-top: 49px; background-color: #fefefe;">
+            <ul>
+                <li (mouseover)="activate(0)">
+                    Soy Candles
+                </li>
+                <li (mouseover)="activate(1)">
+                    Beeswax Candles
+                </li>
+                <li (mouseover)="activate(2)">
+                    Natural Soap
+                </li>
+                <li (mouseover)="activate(3)">
+                    Bath Accessories
+                </li>
+                <li (mouseover)="activate(4)">
+                    Gift Sets
+                </li>
+            </ul>
+        </div>
+        <div style="width: 100%; margin-top: 64px; padding: 15px; background-color: #fff">
+            <div *ngIf="sections[0].Active">
+                Soy Candles
+            </div>
+            <div *ngIf="sections[1].Active">
+                Beeswax Candles
+            </div>
+            <div *ngIf="sections[2].Active">
+                Natural Soap
+            </div>
+            <div *ngIf="sections[3].Active">
+                Bath Accessories
+            </div>
+            <div *ngIf="sections[4].Active">
+                Gift Sets
+            </div>
+        </div>
+    </div>
+</div>

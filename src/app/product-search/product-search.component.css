@@ -1,0 +1,22 @@
+.search {
+  position: absolute;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  margin: -56px auto 0 auto;
+  background-color: lightgrey;
+  border-bottom: 1px solid dimgray;
+  transition: margin-top 0.4s ease;
+}
+.search.toggled {
+  margin-top: 0;
+}
+.search input {
+  display: block;
+  height: 28px;
+  width: 945px;
+  margin: 74px auto 0 auto;
+  padding-left: 10px;
+  border-radius: 6px;
+  font-size: 18px;
+}
