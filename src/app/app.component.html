@@ -16,11 +16,7 @@
                 <mat-icon>store</mat-icon>
                 <span>Catalog</span>
             </button>
-            <button mat-button (click)="searching = !searching; menu = false;">
-                <mat-icon>search</mat-icon>
-                <span>Search</span>
-            </button>
-            <button mat-button (click)="openShoppingCart()">
+            <button mat-button routerLink="/shopping-cart">
                 <mat-icon *ngIf="!cartService.items.length">shopping_cart</mat-icon>
                 <mat-icon *ngIf="cartService.items.length" matBadge="{{ cartService.items.length }}" matBadgeColor="warn">shopping_cart</mat-icon>
                 <span>Shopping Cart</span>
@@ -30,8 +26,6 @@
 </header>
 
 <product-navigation [toggled]="menu"></product-navigation>
-
-<product-search [toggled]="searching"></product-search>
 
 <div class="page-content">
     <router-outlet></router-outlet>

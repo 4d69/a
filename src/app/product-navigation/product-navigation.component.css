@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  margin: -202px auto 0 auto;
+  margin: -205px auto 0 auto;
   transition: margin-top 0.4s ease;
 }
 .menu.toggled {

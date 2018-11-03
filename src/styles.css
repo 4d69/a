@@ -26,6 +26,10 @@ a {
 .mat-button-wrapper {
   padding: 0 !important;
 }
+.mat-checkbox-label {
+  font-family: Quicksand, Arial, Helvetica, sans-serif !important;
+  font-weight: normal !important;
+}
 .mat-select-value-text,
 .mat-paginator-navigation-previous,
 .mat-paginator-navigation-next {

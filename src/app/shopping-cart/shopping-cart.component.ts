@@ -9,9 +9,9 @@ import { MatDialogRef, MatTableDataSource } from '@angular/material';
     styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-    constructor(private changeDetectorRefs: ChangeDetectorRef, private cartService: ShoppingCartService, private dialogRef: MatDialogRef<ShoppingCartComponent>) { }
+    constructor(private changeDetectorRefs: ChangeDetectorRef, private cartService: ShoppingCartService) { }
 
-    displayedColumns: string[] = ['Image', 'Name', 'Price', 'Quantity', 'Total', 'Remove'];
+    displayedColumns: string[] = ['Name', 'Price', 'Quantity', 'Total', 'Remove'];
 
     dataSource = new MatTableDataSource(this.cartService.items);
 

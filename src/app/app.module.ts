@@ -6,8 +6,10 @@ import {
     MatBadgeModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatChipsModule,
     MatDialogModule,
+    MatFormFieldModule,
     MatIconModule,
     MatInputModule,
     MatPaginatorModule,
@@ -24,7 +26,6 @@ import { ProductCarouselComponent } from './product-carousel/product-carousel.co
 import { ProductCatalogComponent } from './product-catalog/product-catalog.component';
 import { ProductCatalogService } from './product-catalog/product-catalog.service';
 import { ProductNavigationComponent } from './product-navigation/product-navigation.component';
-import { ProductSearchComponent } from './product-search/product-search.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'product-catalog', component: ProductCatalogComponent },
     { path: 'product-catalog/:filter', component: ProductCatalogComponent },
-    //{ path: 'hero/:id',      component: HeroDetailComponent },
+    { path: 'shopping-cart', component: ShoppingCartComponent },
     //{ path: '**', component: PageNotFoundComponent }
 ];
 
@@ -46,8 +47,10 @@ const appRoutes: Routes = [
         MatBadgeModule,
         MatButtonModule,
         MatCardModule,
+        MatCheckboxModule,
         MatChipsModule,
         MatDialogModule,
+        MatFormFieldModule,
         MatIconModule,
         MatInputModule,
         MatPaginatorModule,
@@ -65,7 +68,6 @@ const appRoutes: Routes = [
         ProductCarouselComponent,
         ProductCatalogComponent,
         ProductNavigationComponent,
-        ProductSearchComponent,
         ShoppingCartComponent
     ],
     providers: [
@@ -73,8 +75,7 @@ const appRoutes: Routes = [
         ShoppingCartService
     ],
     entryComponents: [
-        ProductCardComponent,
-        ShoppingCartComponent
+        ProductCardComponent
     ],
     bootstrap: [
         AppComponent

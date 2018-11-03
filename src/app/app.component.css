@@ -30,18 +30,19 @@ header {
   outline: 0;
 }
 .header-buttons button {
+  margin-left: 1px; /* strange hover bug on sibling happening without margin */
   color: #fff;
   font-family: Quicksand, Arial, Helvetica, sans-serif;
 }
 .header-buttons button .mat-icon {
   margin: 0 10px;
 }
-.header-buttons button:hover {
+/* .header-buttons button:hover {
   color: mediumorchid;
 }
 .header-buttons button:hover .mat-icon {
   color: mediumorchid;
-}
+} */
 
 
 

@@ -11,6 +11,7 @@
 .page-content {
   /* background: url("../../assets/bg2.png");
   background-size: cover; */
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
 }
 .page-content > .offer-container {
   height: 500px;
