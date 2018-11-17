@@ -1,5 +1,5 @@
 <div class="page-container">
-    <div class="no-items" *ngIf="!cartService.items.length">
+    <div class="no-items card" *ngIf="!cartService.items.length">
         <img src="../../../assets/empty_cart.jpg">
         <div style="font-family: Montserrat; font-size: 28px; color: #555;">Empty Cart</div>
         <div style="margin-top: 10px;"><a routerLink="/product-catalog">Click here to browse our product catalog.</a></div>
@@ -20,6 +20,9 @@
                 </div>
                 <div class="price">
                     {{ item.Price * item.Quantity | currency }}
+                </div>
+                <div class="remove">
+                    <button (click)="cartService.removeItem(item)">Remove</button>
                 </div>
             </div>
         </div>

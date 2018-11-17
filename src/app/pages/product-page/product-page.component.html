@@ -5,7 +5,7 @@
         {{ item.Name }}
     </div>
     
-    <div class="main-content">
+    <div class="main-content card">
         <div class="image-wrapper">
             <!-- <img src="../../assets/{{ item.ImagePath }}"> -->
             <div style="height: 600px; width: 750px; background-color: #eaeaea;"></div>
@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <product-carousel [title]="'You may also like:'" [items]="carouselService.items"></product-carousel>
+    <product-carousel class="card" [title]="'You may also like:'" [items]="carouselService.items"></product-carousel>
 
-    <customer-reviews [service]="reviewsService"></customer-reviews>
+    <customer-reviews class="card" [service]="reviewsService"></customer-reviews>
 </div>

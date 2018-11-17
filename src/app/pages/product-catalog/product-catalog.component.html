@@ -36,7 +36,7 @@
                         Category
                     </div>
                     <mat-checkbox *ngFor="let c of categories" (change)="checked(c)" [checked]="c.active">
-                        {{ c.name }}
+                        {{ c.name }} <span style="color: dimgray;">({{ productCatalog.categoryCount(c.name) }})</span>
                     </mat-checkbox>
                     <button (click)="resetFilter(categories)">Reset Filter</button>
                 </div>

@@ -10,14 +10,14 @@ export class ShoppingCartService {
         console.log('init: ShoppingCartService');
     }
 
-    // items: Item[] = [
-    //     { Id: 10, Category: 'Soy Wax Candles', Tags: [], Name: 'Vanilla Cotton', Description: '', Price: 8.99, ImagePath: 'Candle4.jpg', Quantity: 1 },
-    //     { Id: 30, Category: 'Soy Wax Candles', Tags: [], Name: 'Vanilla Cotton2', Description: '', Price: 8.99, ImagePath: 'Candle4.jpg', Quantity: 1 },
-    //     { Id: 40, Category: 'Soy Wax Candles', Tags: [], Name: 'Vanilla Cotton3', Description: '', Price: 8.99, ImagePath: 'Candle4.jpg', Quantity: 1 },
-    //     { Id: 50, Category: 'Soy Wax Candles', Tags: [], Name: 'Vanilla Cotton4', Description: '', Price: 8.99, ImagePath: 'Candle4.jpg', Quantity: 1 }
-    // ];
+    items: Item[] = [
+        { Id: 10, Category: 'Soy Wax Candles', Tags: [], Name: 'Vanilla Cotton', Description: '', Price: 8.99, ImagePath: 'Candle4.jpg', Quantity: 1 },
+        { Id: 30, Category: 'Soy Wax Candles', Tags: [], Name: 'Vanilla Cotton2', Description: '', Price: 8.99, ImagePath: 'Candle4.jpg', Quantity: 1 },
+        { Id: 40, Category: 'Soy Wax Candles', Tags: [], Name: 'Vanilla Cotton3', Description: '', Price: 8.99, ImagePath: 'Candle4.jpg', Quantity: 1 },
+        { Id: 50, Category: 'Soy Wax Candles', Tags: [], Name: 'Vanilla Cotton4', Description: '', Price: 8.99, ImagePath: 'Candle4.jpg', Quantity: 1 }
+    ];
 
-    items: Item[] = [];
+    // items: Item[] = [];
 
     addItem(item: Item): void {
         this.items.push(item);

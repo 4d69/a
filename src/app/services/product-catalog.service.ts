@@ -13,6 +13,16 @@ export class ProductCatalogService {
 
     items: Item[];
 
+    categoryCount(category: string): number {
+        let i = 0;
+        this.items.forEach(item => {
+            if (item.Category === category) {
+                i += 1;
+            }
+        });
+        return i;
+    }
+
     getById(id: string): any {
         let returnedItem;
         this.items.forEach(item => {

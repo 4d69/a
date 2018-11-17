@@ -9,7 +9,7 @@
 /* header */
 .header-wrapper {
   background-color: $header-color;
-  // box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
   z-index: 100;
 }
 .header {
@@ -49,10 +49,10 @@
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  top: 66px;
-  right: 0;
+  top: 69px;
+  right: -10px;
   height: 0px;
-  width: 300px;
+  width: 450px;
   background-color: #fff;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.3), 0 4px 5px 0 rgba(0, 0, 0, 0.18), 0 1px 10px 0 rgba(0, 0, 0, 0.18);
   font-family: Montserrat;
@@ -63,16 +63,24 @@
   height: 400px;
 }
 .mini-cart button {
-  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  background-color: $primary-color;
+  padding: 8px 20px;
+  background-color: $tertiary-color;
+  border: none;
   color: #fff;
+  font-family: $secondary-font;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-img {
-  max-width: 80%;
-  margin: 30px auto 0 auto;
+.cart-img {
+  width: 100%;
+  height: 100%;
 }
+
 a {
   color: $primary-color;
   font-family: $primary-font;
