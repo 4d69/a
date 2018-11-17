@@ -1,0 +1,43 @@
+.review-card {
+  padding: 15px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
+}
+.review-card > .header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.review-card > .header > .title {
+  align-self: flex-end;
+}
+.review-card > .name {
+  margin-top: 5px;
+  font-size: 14px;
+}
+.review-card > .location {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.review-card > .report {
+  margin-top: 10px;
+  color: rebeccapurple;
+  font-size: 12px;
+  text-align: right;
+}
+.review-card > .report > a {
+  cursor: pointer;
+}
+.review-stars {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.review-stars > .mat-icon {
+  color: #ff9019;
+}
+.review-stars > span {
+  margin-right: 5px;
+  font-size: 12px;
+}

@@ -1,0 +1,23 @@
+<div class="review-card">
+    <div class="header">
+        <div class="title">
+            {{ review.title }}
+        </div>
+        <div class="review-stars">
+            <span>({{ review.rating }} stars)</span>
+            <mat-icon *ngFor="let star of stars">{{ star }}</mat-icon>
+        </div>
+    </div>
+    <div class="name">
+        {{ review.name }}
+    </div>
+    <div class="location">
+        {{ review.location }}
+    </div>
+    <div class="content">
+        {{ review.text }}
+    </div>
+    <div class="report">
+        <a (click)="reportInappropriate()">Report as inappropriate</a>
+    </div>
+</div>

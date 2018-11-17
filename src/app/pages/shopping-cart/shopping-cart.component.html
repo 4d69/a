@@ -1,0 +1,55 @@
+<div class="page-container">
+    <div class="no-items" *ngIf="!cartService.items.length">
+        <img src="../../../assets/empty_cart.jpg">
+        <div style="font-family: Montserrat; font-size: 28px; color: #555;">Empty Cart</div>
+        <div style="margin-top: 10px;"><a routerLink="/product-catalog">Click here to browse our product catalog.</a></div>
+    </div>
+
+    <!-- .order-items-wrapper -->
+    <div class="order-items-wrapper" *ngIf="cartService.items.length">
+        <div class="header">
+            Shopping Cart Items
+        </div>
+        <div class="order-items">
+            <div class="item" *ngFor="let item of cartService.items">
+                <div class="quantity">
+                    <input [(ngModel)]="item.Quantity">
+                </div>
+                <div class="name">
+                    {{ item.Name }} <span class="category">({{ item.Category }})</span>
+                </div>
+                <div class="price">
+                    {{ item.Price * item.Quantity | currency }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.order-items-wrapper -->
+
+    <!-- .order-summary-wrapper -->
+    <div class="order-summary-wrapper" *ngIf="cartService.items.length">
+        <div class="header">
+            Order Summary
+        </div>
+        <div class="order-summary">
+            <div class="list-item">
+                <span>Subtotal:</span>
+                <span>{{ this.cartService.getTotalCost() | currency }}</span>
+            </div>
+            <div class="list-item">
+                <span>Shipping:</span>
+                <span>{{ 0 | currency }}</span>
+            </div>
+            <div class="list-item">
+                <span>Tax:</span>
+                <span>{{ this.cartService.getTax() | currency}}</span>
+            </div>
+            <div class="list-item total">
+                <span>Order Total:</span>
+                <span>{{ this.cartService.getTotalCost() + this.cartService.getTax() | currency}}</span>
+            </div>
+            <button (click)="checkout()">Checkout</button>
+        </div>
+    </div>
+    <!-- /.order-summary-wrapper -->
+</div>

@@ -1,0 +1,12 @@
+.review-stars {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.review-stars > .mat-icon {
+  color: #ff9019;
+}
+.review-stars > span {
+  margin-left: 5px;
+  font-size: 12px;
+}

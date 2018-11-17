@@ -1,0 +1,87 @@
+<div class="page-container">
+    <div>
+        <!-- .page-header -->
+        <div class="page-header">
+            <div class="title">
+                Product Catalog
+            </div>
+            <div class="sort">
+                <div>
+                    <label>Sort By:</label>
+                </div>
+                <div>
+                    <select (change)="sortChanged($event.target.value)">
+                        <option value="1">Most Popular</option>
+                        <option value="2">Alphabetical (A-Z)</option>
+                        <option value="3">Alphabetical (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- /.page-header -->
+
+        <!-- .products-filter-wrapper -->
+        <div class="products-filter-wrapper">
+            <!-- .products-filter -->
+            <div class="products-filter">
+                <div class="filter-group">
+                    <div class="header">Search</div>
+                    <div class="search">
+                        <input [(ngModel)]="searchText" (keyup)="search()" type="text">
+                        <span class="search-icon"></span>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="header">
+                        Category
+                    </div>
+                    <mat-checkbox *ngFor="let c of categories" (change)="checked(c)" [checked]="c.active">
+                        {{ c.name }}
+                    </mat-checkbox>
+                    <button (click)="resetFilter(categories)">Reset Filter</button>
+                </div>
+                <div class="filter-group">
+                    <div class="header">Price</div>
+                    <mat-checkbox *ngFor="let p of prices" (change)="checked(p)" [checked]="p.active">
+                        {{ p.name }}
+                    </mat-checkbox>
+                    <button (click)="resetFilter(prices)">Reset Filter</button>
+                </div>
+            </div>
+            <!-- ./products-filter -->
+            <!-- .products-list -->
+            <div class="products-list">
+                <div class="product-card-wrapper" *ngFor="let item of dataSource.connect() | async">
+                    <div class="product-card" routerLink="/product-page/{{ item.Id }}">
+                        <div class="image-overlay"></div>
+                        <div class="image-overlay-text">Click to view product</div>
+                        <div class="image">
+                            <img src="../../assets/{{ item.ImagePath }}">
+                        </div>
+                        <div class="info">
+                            <div class="name">
+                                {{ item.Name }}
+                            </div>
+                            <div class="category">
+                                {{ item.Category }}
+                            </div>
+                            <div class="price">
+                                {{ item.Price | currency }}
+                            </div>
+                            <div class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="no-items" *ngIf="!dataSource.filteredData.length">
+                    Sorry, no items were found that match your search.
+                </div>
+            </div>
+            <!-- /.products-list -->
+        </div>
+        <!-- /.products-filter-wrapper -->
+    </div>
+
+    <mat-paginator [pageSize]="12" [pageSizeOptions]="[12, 24, 48, 96]"></mat-paginator>
+</div>

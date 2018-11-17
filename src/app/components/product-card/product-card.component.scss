@@ -1,0 +1,66 @@
+@import '../../../theme.scss';
+
+.product-card {
+  font-family: $primary-font;
+}
+.header {
+  margin: -24px;
+  padding: 10px;
+  text-align: right;
+}
+.image-wrapper {
+  height: 200px;
+  width: 100%;
+  background-color: #efefef;
+  text-align: center;
+}
+.image-wrapper > img {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: -15px;
+  padding: 5px 0;
+}
+.name {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.price {
+  margin-bottom: 15px;
+  color: $secondary-color;
+  font-size: 14px;
+}
+.description {
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: justify;
+}
+.quantity {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.quantity > input {
+  height: 32px;
+  width: 25%;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+}
+.quantity > .undo {
+  float: right;
+}
+.actions {
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+  font-size: 18px;
+}
+.actions > span {
+  vertical-align: -webkit-baseline-middle;
+}
+.actions > button {
+  float: right;
+  width: 150px;
+  text-transform: uppercase;
+}

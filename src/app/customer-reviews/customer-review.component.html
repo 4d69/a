@@ -1,0 +1,16 @@
+<div class="reviews">
+    <div class="header">
+        <div>
+            <b>Customer Reviews</b>
+            <review-widget [service]="reviewsService"></review-widget>
+        </div>
+        <div class="write-review" (click)="writeReview()">
+            <a>Write a review</a>
+        </div>
+    </div>
+    
+    <review-card *ngFor="let review of reviewsService.reviews" [data]="review"></review-card>
+    <div class="no-reviews" *ngIf="!reviewsService.reviews.length">
+        There are no reviews for this product yet. Be the first to <a (click)="writeReview()">write a review!</a>
+    </div>
+</div>

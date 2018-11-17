@@ -1,0 +1,25 @@
+<div class="review-form">
+    <div class="header">
+        Leave a review
+    </div>
+
+    <div class="review-stars">
+        <mat-icon *ngFor="let star of reviewStars; let i = index" (click)="updateRating(i+1)">
+            {{ star }}
+        </mat-icon>
+    </div>
+
+    <label>Name:</label>
+    <input [(ngModel)]="review.name">
+
+    <label>Location:</label>
+    <input [(ngModel)]="review.location">
+
+    <label>Comments:</label>
+    <textarea [(ngModel)]="review.text"></textarea>
+
+    <div class="buttons">
+        <button (click)="submit()" type="button">Submit</button>
+        <button (click)="cancel()" type="button">Cancel</button>
+    </div>
+</div>

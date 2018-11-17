@@ -1,0 +1,64 @@
+<div class="page-container">
+    <div class="header">
+        <a routerLink="/product-catalog">Collections</a><span>></span>
+        <a routerLink="/product-catalog/{{item.Category}}">{{ item.Category }}</a><span>></span>
+        {{ item.Name }}
+    </div>
+    
+    <div class="main-content">
+        <div class="image-wrapper">
+            <!-- <img src="../../assets/{{ item.ImagePath }}"> -->
+            <div style="height: 600px; width: 750px; background-color: #eaeaea;"></div>
+        </div>
+        <div class="product-details">
+            <div class="title">
+                {{ item.Name }}
+                <review-widget [service]="reviewsService"></review-widget>
+            </div>
+            <div class="price">
+                {{ item.Price | currency }}
+            </div>
+            <select>
+                <option>8oz - Glass Jar</option>
+                <option>8oz - Tin</option>
+                <option>16oz - Glass Jar</option>
+            </select>
+            <div class="description">
+                <div class="label">
+                    Description
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div class="description">
+                <div class="label">
+                    Ingredients
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            </div>
+            <div class="add-to-cart">
+                <div class="quantity-wrapper">
+                    <div class="label">Quantity</div>
+                    <div class="quantity">
+                        <button (click)="decreaseQuantity()">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                        <input [(ngModel)]="item.Quantity" type="number" maxlength="2">
+                        <button (click)="increaseQuantity()">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <button *ngIf="!shoppingCart.contains(item)" (click)="addToCart()">
+                    <span>Add To Cart</span><mat-icon>shopping_cart</mat-icon>
+                </button>
+                <button *ngIf="shoppingCart.contains(item)">
+                    <span>In Cart</span><mat-icon>check</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <product-carousel [title]="'You may also like:'" [items]="carouselService.items"></product-carousel>
+
+    <customer-reviews [service]="reviewsService"></customer-reviews>
+</div>

@@ -1,0 +1,33 @@
+.reviews {
+  border: 1px solid #ddd;
+}
+.reviews > .header {
+  display: flex;
+  padding: 15px;
+  background-color: #fff;
+  color: #333;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+.reviews > .header > .write-review {
+  flex-grow: 1;
+  align-self: flex-end;
+  color: rebeccapurple;
+  font-weight: normal;
+  font-size: 18px;
+  text-align: right;
+}
+.reviews > .header > .write-review > a {
+  cursor: pointer;
+}
+.no-reviews {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.no-reviews > a {
+  color: rebeccapurple;
+  font-weight: bold;
+  cursor: pointer;
+}

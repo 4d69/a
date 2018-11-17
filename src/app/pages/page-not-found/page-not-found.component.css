@@ -1,0 +1,22 @@
+.page-container {
+  padding-top: 25px;
+  font-family: Kanit, Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.title {
+  margin-bottom: -50px;
+  background: linear-gradient(130deg, #d5b1fa, #22043f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 186px;
+}
+.subtitle {
+  font-size: 33px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.text {
+  margin: 50px auto 0 auto;
+  width: 700px;
+}

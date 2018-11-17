@@ -1,0 +1,27 @@
+<div class="product-carousel">
+    <div class="header">
+        <span>{{ title }}</span>
+        <div>
+            <button mat-mini-fab (click)="subtractIndex()">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <button mat-mini-fab (click)="addIndex()">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="item-card" *ngFor="let item of displayedItems" (click)="openProductCard(item)">
+            <div class="image">
+                <!-- <img src="../../assets/{{ item.ImagePath }}"> -->
+            </div>
+            <div class="name">
+                {{ item.Name }}
+            </div>
+            <div class="price">
+                {{ item.Price | currency }}
+            </div>
+        </div>
+    </div>
+</div>

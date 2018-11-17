@@ -1,0 +1,4 @@
+<div class="review-stars">
+    <mat-icon *ngFor="let star of stars">{{ star }}</mat-icon>
+    <span>(based on {{ reviewsService.reviews.length }} reviews)</span>
+</div>
